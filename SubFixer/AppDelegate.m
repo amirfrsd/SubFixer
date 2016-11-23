@@ -7,12 +7,18 @@
 //
 
 #import "AppDelegate.h"
+#import "SFConverter.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
+-(BOOL)application:(NSApplication *)sender openFile:(NSString *)filename
+{
+    [SFConverter fixSubtitleAtPath:filename];
+    return YES;
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
